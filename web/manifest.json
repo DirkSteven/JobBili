@@ -1,6 +1,6 @@
 {
-    "name": "million_dollar_startup",
-    "short_name": "million_dollar_startup",
+    "name": "oprehab",
+    "short_name": "oprehab",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
