@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:million_dollar_startup/widgets/service_post_card.dart';
+import '../dummy/service_posts_data.dart';
 import '../widgets/header.dart'; // Import the header.dart file
 import '../widgets/services_icons.dart'; // Import the services_icons.dart file
 
@@ -7,8 +9,29 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black12, 
+
+    List<ServicePostCard> servicePostCards = servicePostsDummyData.map((servicePost) {
+      return ServicePostCard(servicePostData: servicePost);
+    }).toList();
+
+
+return Scaffold(
+      // AppBar with amber, grey[900], and white theme, and Drawer widget
+      appBar: AppBar(
+        title: const Text(
+          "Home",
+          style: TextStyle(
+            fontFamily: 'Montserrat', // Custom font if needed
+            fontWeight: FontWeight.w600,
+            fontSize: 20,
+            color: Colors.white, // White title text
+          ),
+        ),
+        centerTitle: true, // Centered title
+        backgroundColor: Colors.grey[900], // Grey[900] background color
+        elevation: 5, // Slight shadow effect
+      ),
+      
       body: Column(
         children: [
         
@@ -46,6 +69,16 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
+
+          ListView.builder(
+        padding: const EdgeInsets.all(8),
+        itemCount: servicePostCards.length,
+        itemBuilder: (context, index) {
+          return servicePostCards[index];
+        },
+      ),
+
+
         ],
       ),
     );
