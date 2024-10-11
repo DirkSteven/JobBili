@@ -5,17 +5,20 @@ class ServicesIcons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0), 
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween, 
-        children: [
-          _buildServiceItem(Icons.plumbing, "Plumbing"),
-          _buildServiceItem(Icons.cleaning_services, "Housekeeping"),
-          _buildServiceItem(Icons.construction, "Carpentry"),
-          _buildServiceItem(Icons.electrical_services, "Electrical"),
-          _buildServiceItem(Icons.more_horiz, "More"), 
-        ],
+    return Container(
+      margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0), 
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween, 
+          children: [
+            _buildServiceItem(Icons.plumbing, "Plumbing"),
+            _buildServiceItem(Icons.cleaning_services, "Housekeeping"),
+            _buildServiceItem(Icons.construction, "Carpentry"),
+            _buildServiceItem(Icons.electrical_services, "Electrical"),
+            _buildServiceItem(Icons.more_horiz, "More"), 
+          ],
+        ),
       ),
     );
   }

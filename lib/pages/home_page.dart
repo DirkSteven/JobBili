@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:million_dollar_startup/widgets/service_post_card.dart';
 import '../dummy/service_posts_data.dart';
-import '../widgets/header.dart'; // Import the header.dart file
+import '../widgets/header.dart';
 import '../widgets/services_icons.dart'; // Import the services_icons.dart file
 
 class HomePage extends StatelessWidget {
@@ -9,77 +9,52 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     List<ServicePostCard> servicePostCards = servicePostsDummyData.map((servicePost) {
       return ServicePostCard(servicePostData: servicePost);
     }).toList();
 
+    return Scaffold(
+      // Use CustomHeader as the AppBar
+      appBar: const CustomHeader(),
 
-return Scaffold(
-      // AppBar with amber, grey[900], and white theme, and Drawer widget
-      appBar: AppBar(
-        title: const Text(
-          "Home",
-          style: TextStyle(
-            fontFamily: 'Montserrat', // Custom font if needed
-            fontWeight: FontWeight.w600,
-            fontSize: 20,
-            color: Colors.white, // White title text
-          ),
+       body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const ServicesIcons(), // ServicesIcons widget at the top
+            const SizedBox(height: 20), // Spacing
+
+            // "Available Jobs" section with custom styling
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Row(
+                children: const [
+                  SizedBox(width: 8),
+                  Text(
+                    "Available Jobs",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87, // Darker color for heading
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+
+            // Service Post Cards
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(), // Disable scrolling of ListView (already inside a SingleChildScrollView)
+              padding: const EdgeInsets.all(8),
+              itemCount: servicePostCards.length,
+              itemBuilder: (context, index) {
+                return servicePostCards[index];
+              },
+            ),
+          ],
         ),
-        centerTitle: true, // Centered title
-        backgroundColor: Colors.grey[900], // Grey[900] background color
-        elevation: 5, // Slight shadow effect
-      ),
-      
-      body: Column(
-        children: [
-        
-          CustomHeader(),
-
-          SizedBox(height: 20),
-
-          ServicesIcons(),
-
-          SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "Available workers nearby",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black87, 
-                ),
-              ),
-            ),
-          ),
-
-          
-          SizedBox(height: 20),
-
-          
-          Expanded(
-            child: Center(
-              child: Text(
-                "Home",
-                style: TextStyle(fontSize: 16, color: Colors.black87), 
-              ),
-            ),
-          ),
-
-          ListView.builder(
-        padding: const EdgeInsets.all(8),
-        itemCount: servicePostCards.length,
-        itemBuilder: (context, index) {
-          return servicePostCards[index];
-        },
-      ),
-
-
-        ],
       ),
     );
   }
