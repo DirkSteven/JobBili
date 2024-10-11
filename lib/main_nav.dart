@@ -44,7 +44,7 @@ class _MainNavState extends State<MainNav> {
         onPressed: (){},
         shape: CircleBorder(),
         backgroundColor: Colors.amber,
-        child: Icon(Icons.post_add_rounded),
+        child: Icon(Icons.post_add_rounded),  
       ),
 
       bottomNavigationBar: AnimatedBottomNavigationBar(
