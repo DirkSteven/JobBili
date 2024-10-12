@@ -26,7 +26,7 @@ class ServicePostDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: "Details",
+        title: "Service Details",
           actions: [          
             IconButton(
               icon: const Icon(Icons.message_rounded, color: AppColors.primaryBlack), 
