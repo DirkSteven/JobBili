@@ -3,13 +3,15 @@ import 'package:million_dollar_startup/styles/colors.dart';
 import '../dummy/service_posts_data.dart';
 import '../widgets/custom_app_bar.dart';
 import '../widgets/service_post_card.dart';
-import '../widgets/services_icons.dart'; // Import the services_icons.dart file
+import '../widgets/services_icons.dart'; 
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+    // TODO: filter closed services
     List<ServicePostCard> servicePostCards = servicePostsDummyData.map((servicePost) {
       return ServicePostCard(servicePostData: servicePost);
     }).toList();
@@ -19,7 +21,7 @@ class HomePage extends StatelessWidget {
         title: "JobBili", 
         actions: [          
           IconButton(
-              icon: const Icon(Icons.logout_rounded, color: AppColors.primaryBlack), // Logout icon with matching color
+              icon: const Icon(Icons.logout_rounded, color: AppColors.primaryBlack), 
               onPressed: () {},
             ),
         ],

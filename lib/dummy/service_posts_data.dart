@@ -11,6 +11,9 @@ List<ServicePost> servicePostsDummyData = [
       '123 Maple Street, Springfield',
       DateTime.now().subtract(Duration(days: 1)).toString(),
       true,
+      ["https://www.rmjeconstruction.com/wp-content/uploads/2019/10/knocking-off-the-wall.jpg", "https://www.expresssewer.com/hubfs/types%20of%20plumbing%20systems%20with%20copper%20pipes.jpeg", "https://cdn.prod.website-files.com/642c021ff5e1407cd1335eaf/64492986462df701b91ad74d_House%20Renovation%20Feature.jpg"],
+      1000,
+      2000
     ),
     ServicePost(
       'sp2',
@@ -22,6 +25,9 @@ List<ServicePost> servicePostsDummyData = [
       '123 Maple Street, Springfield',
       DateTime.now().subtract(Duration(days: 2)).toString(),
       true,
+      ["https://www.rmjeconstruction.com/wp-content/uploads/2019/10/knocking-off-the-wall.jpg", "https://www.expresssewer.com/hubfs/types%20of%20plumbing%20systems%20with%20copper%20pipes.jpeg", "https://cdn.prod.website-files.com/642c021ff5e1407cd1335eaf/64492986462df701b91ad74d_House%20Renovation%20Feature.jpg"],
+      1000,
+      2000
     ),
     ServicePost(
       'sp3',
@@ -33,6 +39,9 @@ List<ServicePost> servicePostsDummyData = [
       '456 Oak Avenue, Springfield',
       DateTime.now().toString(),
       true,
+      ["https://www.rmjeconstruction.com/wp-content/uploads/2019/10/knocking-off-the-wall.jpg", "https://www.expresssewer.com/hubfs/types%20of%20plumbing%20systems%20with%20copper%20pipes.jpeg", "https://cdn.prod.website-files.com/642c021ff5e1407cd1335eaf/64492986462df701b91ad74d_House%20Renovation%20Feature.jpg"],
+      1000,
+      2000
     ),
     ServicePost(
       'sp4',
@@ -44,6 +53,9 @@ List<ServicePost> servicePostsDummyData = [
       '456 Oak Avenue, Springfield',
       DateTime.now().subtract(Duration(days: 3)).toString(),
       true,
+      ["https://www.rmjeconstruction.com/wp-content/uploads/2019/10/knocking-off-the-wall.jpg", "https://www.expresssewer.com/hubfs/types%20of%20plumbing%20systems%20with%20copper%20pipes.jpeg", "https://cdn.prod.website-files.com/642c021ff5e1407cd1335eaf/64492986462df701b91ad74d_House%20Renovation%20Feature.jpg"],
+      1000,
+      2000      
     ),
     ServicePost(
       'sp5',
@@ -55,5 +67,8 @@ List<ServicePost> servicePostsDummyData = [
       '123 Maple Street, Springfield',
       DateTime.now().subtract(Duration(days: 5)).toString(),
       false,
+      ["https://www.rmjeconstruction.com/wp-content/uploads/2019/10/knocking-off-the-wall.jpg", "https://www.expresssewer.com/hubfs/types%20of%20plumbing%20systems%20with%20copper%20pipes.jpeg", "https://cdn.prod.website-files.com/642c021ff5e1407cd1335eaf/64492986462df701b91ad74d_House%20Renovation%20Feature.jpg"],
+      1000,
+      2000
     ),
   ];

@@ -8,6 +8,9 @@ class ServicePost {
   String location;
   String dateTime;
   bool isOpen;
+  List<String> images;
+  int lowerBudgetRange;
+  int upperBudgetRange;
 
   ServicePost(
     this.serviceId,
@@ -18,6 +21,9 @@ class ServicePost {
     this.category,
     this.location,
     this.dateTime,
-    this.isOpen
+    this.isOpen,
+    this.images,
+    this.lowerBudgetRange,
+    this.upperBudgetRange
   );
 }

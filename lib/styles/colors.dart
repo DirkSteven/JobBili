@@ -9,6 +9,7 @@ class AppColors {
   static const Color primaryWhite = Colors.white;
   static final Color secondaryGrey = Colors.grey[400]!;
 
+  static final Color primaryFontColorYellow = Colors.amber[800]!;    
   static const Color primaryFontColorBlack = Colors.black87;
   static const Color primaryFontColorGrey = Colors.grey;
   static const Color primaryFontColorGreen = Colors.green;
