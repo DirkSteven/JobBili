@@ -1,6 +1,7 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:million_dollar_startup/pages/listings_page.dart';
+import 'package:million_dollar_startup/styles/colors.dart';
 
 import 'pages/home_page.dart';
 import 'pages/profile_page.dart';
@@ -24,10 +25,10 @@ class _MainNavState extends State<MainNav> {
   ];
 
   final List<Widget> pageList = <Widget>[
-    HomePage(),
-    SearchPage(),
-    ListingsPage(),
-    ProfilePage(),
+    const HomePage(),
+    const SearchPage(),
+    const ListingsPage(),
+    const ProfilePage(),
   ];
 
   @override
@@ -42,9 +43,9 @@ class _MainNavState extends State<MainNav> {
 
       floatingActionButton: FloatingActionButton(
         onPressed: (){},
-        shape: CircleBorder(),
-        backgroundColor: Colors.amber,
-        child: Icon(Icons.post_add_rounded),  
+        shape: const CircleBorder(),
+        backgroundColor: AppColors.primaryYellow,
+        child: const Icon(Icons.post_add_rounded),  
       ),
 
       bottomNavigationBar: AnimatedBottomNavigationBar(
@@ -59,9 +60,9 @@ class _MainNavState extends State<MainNav> {
         notchSmoothness: NotchSmoothness.defaultEdge,
         leftCornerRadius: 15.0, 
         rightCornerRadius: 15.0,
-        backgroundColor: Colors.grey[900],
-        activeColor: Colors.amber,
-        inactiveColor: Colors.white,
+        backgroundColor: AppColors.primaryGrey,
+        activeColor: AppColors.primaryYellow,
+        inactiveColor: AppColors.primaryWhite,
       ),
     );
   }

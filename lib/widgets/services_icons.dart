@@ -1,48 +1,52 @@
 import 'package:flutter/material.dart';
+import 'package:million_dollar_startup/styles/colors.dart';
 
 class ServicesIcons extends StatelessWidget {
   const ServicesIcons({super.key});
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
-      margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+      margin: const EdgeInsets.only(top: 20),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0), 
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween, 
           children: [
-            _buildServiceItem(Icons.plumbing, "Plumbing"),
-            _buildServiceItem(Icons.cleaning_services, "Housekeeping"),
-            _buildServiceItem(Icons.construction, "Carpentry"),
-            _buildServiceItem(Icons.electrical_services, "Electrical"),
-            _buildServiceItem(Icons.more_horiz, "More"), 
+            _buildServiceItem(Icons.plumbing, "Plumbing", AppColors.primaryWhite, AppColors.primaryGrey),
+            _buildServiceItem(Icons.cleaning_services, "Housekeeping", AppColors.primaryWhite, AppColors.primaryGrey),
+            _buildServiceItem(Icons.construction, "Carpentry", AppColors.primaryWhite, AppColors.primaryGrey),
+            _buildServiceItem(Icons.electrical_services, "Electrical", AppColors.primaryWhite, AppColors.primaryGrey),
+            _buildServiceItem(Icons.more_horiz, "More", AppColors.primaryGrey, AppColors.secondaryGrey), 
           ],
         ),
       ),
     );
   }
 
-  Widget _buildServiceItem(IconData iconData, String label) {
+  Widget _buildServiceItem(IconData iconData, String label, Color iconColor, Color bgColor) {
     return Column(
       mainAxisSize: MainAxisSize.min, 
       children: [
         CircleAvatar(
-          radius: 28, 
-          backgroundColor: Colors.grey[900], 
+          radius: 25, 
+          backgroundColor: bgColor, 
           child: Icon(
             iconData,
-            size: 28, 
-            color: Colors.white, 
+            size: 22, 
+            color: iconColor, 
           ),
         ),
-        SizedBox(height: 8), 
+
+        const SizedBox(height: 8),
+
         Text(
           label,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 10, 
             fontWeight: FontWeight.w500,
-            color: Colors.black87, 
+            color: AppColors.primaryFontColorBlack, 
           ),
         ),
       ],

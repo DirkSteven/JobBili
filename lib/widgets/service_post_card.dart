@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:million_dollar_startup/styles/colors.dart';
 import '../models/service_post.dart';
 
 class ServicePostCard extends StatefulWidget {
@@ -15,60 +16,57 @@ class _ServicePostCardState extends State<ServicePostCard> {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15), // Rounded corners
+        borderRadius: BorderRadius.circular(15), 
       ),
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-      elevation: 5, // Adds shadow
-      color: Colors.white, // Background color for the card
+      elevation: 5, 
+      color: Colors.white, 
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // User Display Name with Styling
+ 
             Text(
               widget.servicePostData.userDisplayName,
               style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: Colors.black87, // Slightly softer black
+                color: AppColors.primaryFontColorBlack,
               ),
             ),
             const SizedBox(height: 8),
 
-            // Service Title
             Text(
               widget.servicePostData.title,
               style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: Colors.amber,
+                color: AppColors.primaryYellow,
               ),
             ),
             const SizedBox(height: 8),
 
-            // Service Description
             Text(
               widget.servicePostData.content,
               style: const TextStyle(
                 fontSize: 14,
-                color: Colors.black87,
-                height: 1.5, // Increases line height for readability
+                color: AppColors.primaryFontColorBlack,
+                height: 1.5, 
               ),
             ),
             const SizedBox(height: 12),
 
-            // Category and Location
             Row(
               children: [
-                Icon(Icons.category, size: 16, color: Colors.grey[700]),
+                Icon(Icons.category, size: 16, color: AppColors.secondaryGrey),
                 const SizedBox(width: 4),
                 Text(
                   'Category: ${widget.servicePostData.category}',
                   style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
-                    color: Colors.black54,
+                    color: AppColors.secondaryFontColorGrey,
                   ),
                 ),
               ],
@@ -77,36 +75,34 @@ class _ServicePostCardState extends State<ServicePostCard> {
 
             Row(
               children: [
-                Icon(Icons.location_on, size: 16, color: Colors.grey[700]),
+                Icon(Icons.location_on, size: 16, color: AppColors.secondaryGrey),
                 const SizedBox(width: 4),
                 Text(
                   'Location: ${widget.servicePostData.location}',
                   style: const TextStyle(
                     fontSize: 12,
-                    color: Colors.black54,
+                    color: AppColors.secondaryFontColorGrey,
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 12),
 
-            // Date of Posting
             Text(
               'Posted on: ${widget.servicePostData.dateTime}',
               style: const TextStyle(
                 fontSize: 12,
-                color: Colors.grey,
+                color: AppColors.primaryFontColorGrey,
                 fontStyle: FontStyle.italic,
               ),
             ),
             const SizedBox(height: 8),
 
-            // Status (Open/Closed)
             Text(
               widget.servicePostData.isOpen ? 'Status: Open' : 'Status: Closed',
               style: TextStyle(
                 fontSize: 14,
-                color: widget.servicePostData.isOpen ? Colors.green : Colors.red,
+                color: widget.servicePostData.isOpen ? AppColors.primaryFontColorGreen : AppColors.primaryFontColorRed,
                 fontWeight: FontWeight.bold,
               ),
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:million_dollar_startup/styles/colors.dart';
 
 import 'main_nav.dart';
 
@@ -14,10 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryYellow),
         useMaterial3: true,
       ),
-      home: MainNav(),
+      home: const MainNav(),
     );
   }
 }
